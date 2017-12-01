@@ -1,0 +1,47 @@
+﻿@model Categories
+
+@{
+    ViewBag.Title = "Detalii";
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+<h2>Detalii</h2>
+<hr />
+<div>
+    <ol class="breadcrumb">
+        <li>
+            <a asp-action="home" asp-controller="Dashboard">Dashboard</a>
+        </li>
+        <li>
+            <a asp-controller="Categories" asp-action="Index">Categorii</a>
+        </li>
+        <li class="active">Detalii</li>
+    </ol>
+    <h4>Categorie</h4>
+    <hr />
+   
+    
+
+        <dl class="dl-horizontal">
+            <dt>
+                Nume Categorie
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CategoryName)<br />
+            </dd>
+
+            <dt>
+                Descriere
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Description)<br />
+            </dd>
+
+        </dl>
+</div>
+<p>
+    <a asp-action="Index" class="btn btn-default">Inapoi</a>
+    <a asp-action="Edit" asp-route-id="@Model.CategoryID" class="btn btn-default">Modifica</a>
+</p>

@@ -1,0 +1,74 @@
+﻿@model IEnumerable<NorthwindWeb.Models.Orders>
+
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Comenzi";
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+<div class="row">
+    <div class="col-lg-12">
+        <h2>Comenzi</h2>
+        <hr />
+        <ol class="breadcrumb">
+            <li>
+                @Html.ActionLink("Dashboard", "Home", "Dashboard")
+            </li>
+            <li class="active">Comenzi</li>
+        </ol>
+        <hr />
+        <br />
+        @Html.ActionLink("Adauga Comanda", "Create", "Orders", new { @class = "btn btn-default" })
+    </div>
+</div>
+<br />
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>
+                    Lista comenzi
+                </h4>
+            </div>
+            <div class="panel-body">
+                <table id="OrdersTable" class="cell-border hover order-column">
+                    <thead>
+                        <tr>
+                            <th>
+                                Id Comanda
+                            </th>
+                            <th>
+                                Nume Angajat
+                            </th>
+                            <th>
+                                Expeditor
+                            </th>
+                            <th>
+                                Data livrare
+                            </th>
+                            <th>
+                                Nume Expeditor
+                            </th>
+                            <th>
+                                Adresa
+                            </th>
+                            <th>
+                                Sterge
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*<div class="row text-center">
+        <div class="col-lg-12">
+            Pagina @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) din @Model.PageCount
+
+            @Html.PagedListPager(Model, page => Url.Action("Index", "Orders", new { page }))
+        </div>
+    </div>*@
