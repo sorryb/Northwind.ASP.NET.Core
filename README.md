@@ -1,2 +1,2 @@
 # Northwind
-Northwind sample application used to master MVC 5 and EF 6.
+Northwind sample application used to master MVC Core and EF Core.
